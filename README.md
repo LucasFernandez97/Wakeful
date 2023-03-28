@@ -28,12 +28,17 @@ El objetivo es la de un ABM de usuarios asi como el login securizado del mismo.
 
 ## Endpoints
 
-- `GET /auth/mfa/config`: Obtener la configuracion actual de los MFAs configurados
+- `GET /auth/mfa/config`: Obtener la configuración actual de los MFAs configurados
 - `GET /auth/mfa/user-active-methods`: Obtiene los MFAs activos actualmente
+- `GET /users`: Obtener todos los usuarios de la aplicación
+- `GET /users/{idUsuario}`: Obtener el usuario por ID
+- `PATCH /users/{idUsuario}/`: Modificación parcial del usuario por ID
+- `DELETE /users/{idUsuario}`: Borrar usuario por ID
 - `POST /auth/login/`: Devuelve el JWT del usuario ingresado en el body del request
 - `POST /auth/{MFA}/activate/`: Activa el Multi Factor Authentication elegido siempre y cuando este configurado
 - `POST /auth/{MFA}/activate/confirm/`: Confirma la activacion con un codigo de seguridad
 - `POST /auth/login/code/`: Obtiene los JWTs para el resto de aplicaciones a traves del codigo proporcionado por el metodo MFA activo
+- `POST /users/`: Crea un usuario para logearse a la aplicación
 
 ## Contacto
 

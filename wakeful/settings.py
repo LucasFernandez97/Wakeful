@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'user',
 ]
 
+AUTH_USER_MODEL = "user.User"
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -58,15 +60,15 @@ TRENCH_AUTH = {
             "USES_THIRD_PARTY_CLIENT": True,
             "HANDLER": "trench.backends.application.ApplicationMessageDispatcher",
         },
-        "email": {
-            "VERBOSE_NAME": "EMAIL",
-            "VALIDITY_PERIOD": 60 * 10,
-            "HANDLER": "trench.backends.basic_mail.SendMailBackend",
-            "SOURCE_FIELD": "email",
-            "EMAIL_SUBJECT": "Codigo de verificacion.",
-            "EMAIL_PLAIN_TEMPLATE": "trench/backends/email/code.txt",
-            "EMAIL_HTML_TEMPLATE": "trench/backends/email/code.html",
-        }
+        'email': {
+            'VERBOSE_NAME': 'email',
+            'VALIDITY_PERIOD': 60 * 10,
+            'HANDLER': 'trench.backends.basic_mail.SendMailMessageDispatcher',
+            'SOURCE_FIELD': 'email',
+            'EMAIL_SUBJECT': 'Codigo de verificacion.',
+            'EMAIL_PLAIN_TEMPLATE': 'trench/backends/email/code.txt',
+            'EMAIL_HTML_TEMPLATE': 'trench/backends/email/code.html',
+        },
     }
 }
 
