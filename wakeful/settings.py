@@ -57,6 +57,15 @@ TRENCH_AUTH = {
             "VALIDITY_PERIOD": 30,
             "USES_THIRD_PARTY_CLIENT": True,
             "HANDLER": "trench.backends.application.ApplicationMessageDispatcher",
+        },
+        "email": {
+            "VERBOSE_NAME": "EMAIL",
+            "VALIDITY_PERIOD": 60 * 10,
+            "HANDLER": "trench.backends.basic_mail.SendMailBackend",
+            "SOURCE_FIELD": "email",
+            "EMAIL_SUBJECT": "Codigo de verificacion.",
+            "EMAIL_PLAIN_TEMPLATE": "trench/backends/email/code.txt",
+            "EMAIL_HTML_TEMPLATE": "trench/backends/email/code.html",
         }
     }
 }
