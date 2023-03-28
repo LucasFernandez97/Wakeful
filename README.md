@@ -2,6 +2,7 @@
 
 ## Requisitos
 
+- Docker
 - Postgres==latest
 - Python==3.9
 - Django~=3.2.18
@@ -16,11 +17,9 @@
 
 1. Clona el repositorio
 2. Abre una terminal y navega hasta el directorio del proyecto
-3. Crea un entorno virtual: `python3 -m venv env`
-4. Activa el entorno virtual: `source env/bin/activate`
-5. Instala los requerimientos: `pip install -r requirements.txt`
-6. Ejecuta las migraciones: `python manage.py migrate`
-7. Ejecuta el servidor: `python manage.py runserver`
+3. Buildear los contenedores: `docker-compose build`
+4. Levantar la base: `docker-compose up db`
+5. Levantar la WEB: `docker-compose up web`
 
 ## Uso
 
